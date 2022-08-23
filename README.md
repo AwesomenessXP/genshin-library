@@ -13,3 +13,4 @@
 
 ## Resources:
 - [Passing dates in URL](https://tsmx.net/express-pass-dates-in-url-with-regex-validation/)
+- [Passing names in URL](https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters)
