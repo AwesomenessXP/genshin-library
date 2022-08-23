@@ -1,8 +1,31 @@
+:root {
+  --bg-primary: #21262D;
+  --font-clr-primary: white;
+  --font-style: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--font-clr-primary);
+  font-family: var(--font-style);
 }
 
 a {
-  color: #00B7FF;
+  color: var(--font-clr-primary);
+}
+
+nav > ul > li {
+  margin: 10px 0 10px 0;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
 }
