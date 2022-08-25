@@ -2,8 +2,14 @@
 <html>
   <%- include('header') -%>  
   <body>
-    <h2><%- title %> </h2>
-    <p><%= genshin_data %> </p>
+    
+    <div class="content">
+      <h2><%- title %> </h2>
+      <% characters.forEach(character => { %> 
+        <p><%- character %> </p>
+      <% }); %> 
+    </div>
+
     <script src="" async defer></script>
   </body>
 </html>

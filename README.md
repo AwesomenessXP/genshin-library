@@ -16,3 +16,7 @@
 - [Passing names in URL](https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters)
 - [Using axios in Node for API calls](https://stackoverflow.com/questions/61119010/calling-a-third-party-api-in-nodejs)
 - [Inheritance in EJS](https://www.anycodings.com/1questions/4858441/how-to-use-block-inheritance-in-ejs-templates)
+
+## What I learned:
+- using axios for API calls
+- using async/await instead of callbacks

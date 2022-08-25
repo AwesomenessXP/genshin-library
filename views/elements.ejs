@@ -2,6 +2,14 @@
 <html>
   <%- include('header') -%>  
   <body>
+
+    <div class="content">
+      <h2><%- title %> </h2>
+      <% elements.forEach(element => { %> 
+        <p><%- element %> </p>
+      <% }); %> 
+    </div>
+    
     <script src="" async defer></script>
   </body>
 </html>
