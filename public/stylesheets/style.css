@@ -1,8 +1,8 @@
 :root {
-  --bg-primary: #21262D;
+  --bg-primary: #0D1117;
   --font-clr-primary: white;
   --font-style: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  --gradient-clr: linear-gradient(to bottom right, #e66465, #e66465);
+  --gradient-clr: linear-gradient(to bottom right, #b664e6, #e5919c);
 }
 
 * {
@@ -17,6 +17,7 @@ body {
 
 nav > div > a {
   color: var(--font-clr-primary);
+  text-decoration: none;
 }
 
 nav {
@@ -33,6 +34,10 @@ nav {
 nav > div, nav > h1 {
   color: var(--font-clr-primary);
   margin: 0 10px 0 10px;
+}
+
+nav > h1 {
+  font-size: 28px;
 }
 
 .content {

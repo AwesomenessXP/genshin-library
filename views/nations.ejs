@@ -5,9 +5,14 @@
 
     <div class="content">
       <h2><%- title %> </h2>
-      <% nations.forEach(nation => { %> 
-        <p><%- nation %> </p>
+
+      <% nations.forEach(character => { %> 
+        <% character = character.split('') %> 
+        <% let firstLetter = character[0].toUpperCase() %> 
+        <% character.shift()%>
+        <p><%- `${firstLetter}${character.join('')}` %> </p>
       <% }); %> 
+      
     </div>
 
     <script src="" async defer></script>
