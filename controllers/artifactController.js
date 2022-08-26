@@ -7,7 +7,7 @@ exports.artifact_list = async (req, res, next) => {
     // REMEMBER: look at the API response before printing anything out!!
     res.render('artifacts', { title: "Artifacts", artifacts: artifacts.data })
   } catch (err) {
-    res.send(err)
+    res.send(err);
   }
 };
 

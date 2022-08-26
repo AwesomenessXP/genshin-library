@@ -7,10 +7,16 @@ exports.character_list = async (req, res, next) => {
     // REMEMBER: look at the API response before printing anything out!!
     res.render('characters', { title: "Characters", characters: characters.data })
   } catch (err) {
-    res.send(err)
+    res.send(err);
   }
 };
 
+exports.character_params = (req, res, next, character) => {
+  req.character = character;
+  console.log(req.character)
+  next();
+}
+
 exports.character_details = (req, res, next) => {
-  res.send('GET character_details not yet implemented');
+  res.render('character_details', {title: req.character});
 };

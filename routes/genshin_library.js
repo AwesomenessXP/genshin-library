@@ -29,6 +29,7 @@ router.get('/nations', nation_controller.nation_list);
 // ------------------- DETAILS OF THE PAGE ----------------------------
 
 // characters
+router.param('character', character_controller.character_params);
 router.get('/characters/:character', character_controller.character_details);
 
 // artifacts
