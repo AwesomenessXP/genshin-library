@@ -4,7 +4,50 @@
   <body>
     
     <div class="content">
-      <h2><%- title %> </h2>
+      <% let characterArray = title.split('') %> 
+      <% let firstLetter = characterArray[0].toUpperCase() %> 
+      <% characterArray.shift()%>
+      <% if (characterArray.includes('-')) { %> 
+        <% const index = characterArray.indexOf('-') %>
+        <% characterArray[index] = ' ' %>
+        <% if (characterArray[index+1] != undefined) { %> 
+          <% characterArray[index+1] = characterArray[index+1].toUpperCase() %> 
+        <% } %>  
+      <% } %> 
+      <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
+      <h2><%- formattedChar %> </h2>
+      <% for (const [key, value] of Object.entries(character_details)) { %>
+        <% let detail = `${key}: ${value}` %> 
+        <% switch (key) { 
+          case 'skillTalents': { %> 
+            <p><%- key %>: </p>
+            <ul>
+              <% value.forEach(obj => { %> 
+                <li><%- obj.name %> </li> 
+              <% }) %> 
+            </ul>
+            <% break; } %>
+          <% case 'passiveTalents': { %> 
+            <p><%- key %>: </p>
+            <ul>
+              <% value.forEach(obj => { %> 
+                <li><%- obj.name %> </li> 
+              <% }) %> 
+            </ul>
+            <% break; } %>
+          <% case 'constellations': { %> 
+          <p><%- key %>: </p>
+          <ul>
+            <% value.forEach(obj => { %> 
+              <li><%- obj.name %> </li> 
+            <% }) %> 
+          </ul>
+          <% break; } 
+          default: %> 
+            <p><%- detail %></p>
+          <% break; %> 
+        <% } %> 
+      <% } %> 
     </div>
 
     <script src="" async defer></script>

@@ -15,8 +15,15 @@ body {
   font-family: var(--font-style);
 }
 
-nav > div > a {
+a:visited, a:link {
   color: var(--font-clr-primary);
+}
+
+nav > div > a:active {
+  color: var(--bg-primary);
+}
+
+nav > div > a {
   text-decoration: none;
 }
 
@@ -41,5 +48,6 @@ nav > h1 {
 }
 
 .content {
-  margin: 10px;
+  margin: 20px;
 }
+

@@ -18,7 +18,7 @@
           <% } %>  
         <% } %> 
         <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
-        <a href="<%= `/genshin-library/characters/${formattedChar}` %>"><p><%- formattedChar %> </p></a>
+        <a href="<%- `/genshin-library/characters/${character}` %>"><p><%- formattedChar %>  </p></a>
       <% }); %> 
       
     </div>

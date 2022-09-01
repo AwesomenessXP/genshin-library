@@ -7,10 +7,18 @@
       <h2><%- title %> </h2>
 
       <% artifacts.forEach(character => { %> 
-        <% character = character.split('') %> 
-        <% let firstLetter = character[0].toUpperCase() %> 
-        <% character.shift()%>
-        <p><%- `${firstLetter}${character.join('')}` %> </p>
+        <% characterArray = character.split('') %> 
+        <% let firstLetter = characterArray[0].toUpperCase() %> 
+        <% characterArray.shift()%>
+        <% if (characterArray.includes('-')) { %> 
+          <% const index = characterArray.indexOf('-') %>
+          <% characterArray[index] = ' ' %>
+          <% if (characterArray[index+1] != undefined) { %> 
+            <% characterArray[index+1] = characterArray[index+1].toUpperCase() %> 
+          <% } %>  
+        <% } %> 
+        <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
+        <a href="<%- `/genshin-library/characters/${formattedChar}` %>"><p><%- formattedChar %>  </p></a>
       <% }); %> 
 
     </div>
