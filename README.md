@@ -22,3 +22,4 @@
 - using async/await instead of callbacks
 - you use req.{query} to retrieve values for URL params
 - passing a single value to a URL is simple: href to a URL that has the value name, then use router.params('value_name', () => ...)
+- to access images, add `/icon` after the data you're looking for

@@ -4,6 +4,7 @@
   <body>
     
     <div class="content">
+      <img src="<%- `https://api.genshin.dev/characters/${title}/icon` %>">
       <% let characterArray = title.split('') %> 
       <% let firstLetter = characterArray[0].toUpperCase() %> 
       <% characterArray.shift()%>
@@ -15,7 +16,7 @@
         <% } %>  
       <% } %> 
       <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
-      <h2><%- formattedChar %> </h2>
+      <h2><%- title %> </h2>
       <% for (const [key, value] of Object.entries(character_details)) { %>
         <% let detail = `${key}: ${value}` %> 
         <% switch (key) { 
@@ -23,7 +24,9 @@
             <p><%- key %>: </p>
             <ul>
               <% value.forEach(obj => { %> 
-                <li><%- obj.name %> </li> 
+                <li> <%- obj.unlock %> - <%- obj.name %> </li> 
+                <li> Description: <%- obj.description %> </li>
+                <br>
               <% }) %> 
             </ul>
             <% break; } %>
@@ -47,6 +50,7 @@
             <p><%- detail %></p>
           <% break; %> 
         <% } %> 
+        <br>
       <% } %> 
     </div>
 

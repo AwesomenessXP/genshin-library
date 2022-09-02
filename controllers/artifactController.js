@@ -11,6 +11,11 @@ exports.artifact_list = async (req, res, next) => {
   }
 };
 
+exports.artifact_params = (req, res, next, artifact) => {
+  req.artifact = artifact;
+  next();
+}
+
 exports.artifact_details = (req, res, next) => {
-  res.send('GET artifact_details not yet implemented');
+  res.render('artifact_details', { title: req.artifact });
 }

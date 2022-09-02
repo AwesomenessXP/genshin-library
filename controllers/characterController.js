@@ -13,7 +13,6 @@ exports.character_list = async (req, res, next) => {
 
 exports.character_params = (req, res, next, character) => {
   req.character = character;
-  console.log(req.character)
   next();
 }
 

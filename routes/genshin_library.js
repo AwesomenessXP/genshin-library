@@ -33,7 +33,8 @@ router.param('character', character_controller.character_params);
 router.get('/characters/:character', character_controller.character_details);
 
 // artifacts
-router.get('/artifacts/:artifact', element_controller.element_details);
+router.param('artifact', artifact_controller.artifact_params);
+router.get('/artifacts/:artifact', artifact_controller.artifact_details);
 
 // elements
 router.get('/elements/:element', element_controller.element_details);
