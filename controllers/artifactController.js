@@ -16,6 +16,11 @@ exports.artifact_params = (req, res, next, artifact) => {
   next();
 }
 
-exports.artifact_details = (req, res, next) => {
-  res.render('artifact_details', { title: req.artifact });
+exports.artifact_details = async (req, res, next) => {
+  try {
+    const artifact_details = await axios.get(`https://api.genshin.dev/artifacts/${req.artifact}`);
+    res.render('artifact_details', { title: req.artifact, artifact_details: artifact_details.data });
+  } catch (err) {
+    res.send(err);
+  }
 }

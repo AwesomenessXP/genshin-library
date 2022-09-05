@@ -23,5 +23,4 @@ exports.character_details = async (req, res, next) => {
   } catch (err) {
     res.send(err);
   }
-  
 };
