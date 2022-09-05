@@ -5,6 +5,9 @@
     
     <div class="content">
       <h2><%- artifact_details.name %> </h2>
+      <p>Max rarity: <%- artifact_details.max_rarity %> </p>
+      <p>2-piece bonus: <%= artifact_details['2-piece_bonus'] %> </p>
+      <p>4-piece bonus: <%= artifact_details['4-piece_bonus'] %> </p>
       <img src="<%- `https://api.genshin.dev/artifacts/${title}/circlet-of-logos` %>">
       <img src="<%- `https://api.genshin.dev/artifacts/${title}/flower-of-life` %>">
       <img src="<%- `https://api.genshin.dev/artifacts/${title}/goblet-of-eonothem` %>">
