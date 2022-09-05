@@ -7,18 +7,21 @@
       <h2><%- title %> </h2>
 
       <% artifacts.forEach(character => { %> 
-        <% characterArray = character.split('') %> 
-        <% let firstLetter = characterArray[0].toUpperCase() %> 
-        <% characterArray.shift()%>
-        <% if (characterArray.includes('-')) { %> 
-          <% const index = characterArray.indexOf('-') %>
-          <% characterArray[index] = ' ' %>
-          <% if (characterArray[index+1] != undefined) { %> 
-            <% characterArray[index+1] = characterArray[index+1].toUpperCase() %> 
-          <% } %>  
-        <% } %> 
-        <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
-        <a href="<%- `/genshin-library/artifacts/${character}` %>"><p><%- character %>  </p></a>
+        <% characterArray = character.replace(/-/g, ' ') %> 
+        <% if (characterArray.includes(" s ")) { %>
+          <% characterArray = characterArray.replace(" s ", "'s ") // format with apostrophe correctly %> 
+        <% } %>
+        <% let count = 0; %> 
+        <% let formattedArtifact = characterArray.split(' ') // split along the spaces %>  
+        <% formattedArtifact.forEach(word => {%>  
+          <% wordArray = word.split('') %> 
+          <% let firstLetter = wordArray[0].toUpperCase() %> 
+          <% wordArray.shift() %>
+          <% formattedArtifact[count] = `${firstLetter}${wordArray.join('')}` %>
+          <% count++ %>  
+        <% }) %>
+        <% formattedArtifact = formattedArtifact.join(' ') %>  
+        <a href="<%- `/genshin-library/artifacts/${character}` %>"><p><%- formattedArtifact %>  </p></a>
       <% }); %> 
 
     </div>
