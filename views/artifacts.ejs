@@ -6,13 +6,13 @@
     <div class="content">
       <h2><%- title %> </h2>
 
-      <% artifacts.forEach(character => { %> 
-        <% characterArray = character.replace(/-/g, ' ') %> 
-        <% if (characterArray.includes(" s ")) { %>
-          <% characterArray = characterArray.replace(" s ", "'s ") // format with apostrophe correctly %> 
+      <% artifacts.forEach(artifact => { %> 
+        <% artifactArray = artifact.replace(/-/g, ' ') %> 
+        <% if (artifactArray.includes(" s ")) { %>
+          <% artifactArray = artifactArray.replace(" s ", "'s ") // format with apostrophe correctly %> 
         <% } %>
         <% let count = 0; %> 
-        <% let formattedArtifact = characterArray.split(' ') // split along the spaces %>  
+        <% let formattedArtifact = artifactArray.split(' ') // split along the spaces %>  
         <% formattedArtifact.forEach(word => {%>  
           <% wordArray = word.split('') %> 
           <% let firstLetter = wordArray[0].toUpperCase() %> 
@@ -21,7 +21,7 @@
           <% count++ %>  
         <% }) %>
         <% formattedArtifact = formattedArtifact.join(' ') %>  
-        <a href="<%- `/genshin-library/artifacts/${character}` %>"><p><%- formattedArtifact %>  </p></a>
+        <a href="<%- `/genshin-library/artifacts/${artifact}` %>"><p><%- formattedArtifact %>  </p></a>
       <% }); %> 
 
     </div>

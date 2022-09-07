@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include('header') -%>  
+  <body>
+    
+    <div class="content">
+      <img src="<%- `https://api.genshin.dev/elements/${title}/icon` %> ">
+      <h2><%- element_details.name %> </h2>
+      <% element_details.reactions.forEach(reaction => { %>
+        <p><%- reaction.name %> </p>
+        <ul>
+          <li><%- reaction.description %></li>
+        </ul>
+        <p>Reactions involved: </p>
+        <ul>
+          <% reaction.elements.forEach(element => { %>
+            <li> <%- element_details.name %>, <%- element %></li> 
+          <% }) %> 
+        </ul>
+      <% }) %>
+    </div>
+
+    <script src="" async defer></script>
+  </body>
+</html>

@@ -6,19 +6,12 @@
     <div class="content">
       <h2><%- title %> </h2>
 
-      <% elements.forEach(character => { %> 
-        <% characterArray = character.split('') %> 
-        <% let firstLetter = characterArray[0].toUpperCase() %> 
-        <% characterArray.shift()%>
-        <% if (characterArray.includes('-')) { %> 
-          <% const index = characterArray.indexOf('-') %>
-          <% characterArray[index] = ' ' %>
-          <% if (characterArray[index+1] != undefined) { %> 
-            <% characterArray[index+1] = characterArray[index+1].toUpperCase() %> 
-          <% } %>  
-        <% } %> 
-        <% const formattedChar = `${firstLetter}${characterArray.join('')}` %> 
-        <a href="<%- `/genshin-library/characters/${formattedChar}` %>"><p><%- formattedChar %>  </p></a>
+      <% elements.forEach(element => { %> 
+        <% let elementArray = element.split('') %> 
+        <% let firstLetter = elementArray[0].toUpperCase() %> 
+        <% elementArray.shift()%>
+        <% const formattedElement = `${firstLetter}${elementArray.join('')}` %> 
+        <a href="<%- `/genshin-library/elements/${element}` %>"><p><%- formattedElement %></p></a>
       <% }); %>  
 
     </div>

@@ -37,6 +37,7 @@ router.param('artifact', artifact_controller.artifact_params);
 router.get('/artifacts/:artifact', artifact_controller.artifact_details);
 
 // elements
+router.param('element', element_controller.element_params);
 router.get('/elements/:element', element_controller.element_details);
 
 // nations
