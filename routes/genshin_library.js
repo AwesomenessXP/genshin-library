@@ -41,6 +41,7 @@ router.param('element', element_controller.element_params);
 router.get('/elements/:element', element_controller.element_details);
 
 // nations
+router.param('nation', nation_controller.nation_params);
 router.get('/nations/:nation', nation_controller.nation_details);
 
 module.exports = router;
