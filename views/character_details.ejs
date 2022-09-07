@@ -24,8 +24,11 @@
           <% case 'passiveTalents': { %> 
             <p><%- key %>: </p>
             <ul>
-              <% value.forEach(obj => { %> 
-                <li><%- obj.name %> </li> 
+              <% value.forEach(obj => { %>
+                <li><%- obj.unlock %></li> 
+                <li><%- obj.name %> </li>
+                <li> Description: <%- obj.description %> </li>
+                <br> 
               <% }) %> 
             </ul>
             <% break; } %>
@@ -33,7 +36,10 @@
           <p><%- key %>: </p>
           <ul>
             <% value.forEach(obj => { %> 
+              <li><%- obj.unlock %></li>
               <li><%- obj.name %> </li> 
+              <li> Description: <%- obj.description %> </li>
+              <br> 
             <% }) %> 
           </ul>
           <% break; } 
