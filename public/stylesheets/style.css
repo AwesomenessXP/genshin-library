@@ -1,5 +1,6 @@
 :root {
   --bg-primary: #0D1117;
+  --bg-hover: #50565f;
   --font-clr-primary: white;
   --font-style: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   --gradient-clr: linear-gradient(to bottom right, #b664e6, #e5919c);
@@ -49,5 +50,30 @@ nav > h1 {
 
 .content {
   margin: 20px;
+}
+
+article {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+article > div {
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: 120px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+article > div:hover {
+  background-color: var(--bg-hover);
+}
+
+.item-list {
+  font-size: 20px;
+  text-decoration: none;
 }
 

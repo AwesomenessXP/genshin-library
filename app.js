@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const redis = require('redis');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -38,6 +39,19 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// connect to redis server
+
+const client = redis.createClient({
+  socket: {
+      host: '127.0.0.1',
+      port: 3000,
+  },
+});
+
+client.on('error', err => {
+  console.log('Error ' + err);
 });
 
 module.exports = app;

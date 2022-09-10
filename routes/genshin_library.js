@@ -17,6 +17,7 @@ router.get('/', (req, res, next) => {
 // characters
 router.get('/characters', character_controller.character_list);
 
+
 // artifacts
 router.get('/artifacts', artifact_controller.artifact_list);
 

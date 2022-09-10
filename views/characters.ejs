@@ -6,21 +6,33 @@
     <div class="content">
       <h2><%- title %> </h2>
 
-      <% characters.forEach(character => { %> 
-        <% characterArray = character.replace(/-/g, ' ') %> 
-        <% let count = 0; %> 
-        <% let formattedChar = characterArray.split(' ') // split along the spaces %>  
-        <% formattedChar.forEach(word => {%>  
-          <% wordArray = word.split('') %> 
-          <% let firstLetter = wordArray[0].toUpperCase() %> 
-          <% wordArray.shift() %>
-          <% formattedChar[count] = `${firstLetter}${wordArray.join('')}` %>
-          <% count++ %>  
-        <% }) %>
-        <% formattedChar = formattedChar.join(' ') %> 
-        <a href="<%- `/genshin-library/characters/${character}` %>"><p><%- formattedChar %></p></a>
-      <% }); %> 
-      
+      <article>
+        <% characters.forEach(character => { %> 
+          <% characterArray = character.replace(/-/g, ' ') %> 
+          <% let count = 0; %> 
+          <% let formattedChar = characterArray.split(' ') // split along the spaces %>  
+          <% formattedChar.forEach(word => {%>  
+            <% wordArray = word.split('') %> 
+            <% let firstLetter = wordArray[0].toUpperCase() %> 
+            <% wordArray.shift() %>
+            <% formattedChar[count] = `${firstLetter}${wordArray.join('')}` %>
+            <% count++ %>  
+          <% }) %>
+          <% formattedChar = formattedChar.join(' ') %>
+          <div>
+
+            <div>
+              <img src="<%- `https://api.genshin.dev/characters/${character}/icon` %>"> 
+            </div>
+
+            <div>
+              <a href="<%- `/genshin-library/characters/${character}` %>"><p class="item-list"><%- formattedChar %></p></a>
+            </div>
+            
+          </div>
+        <% }); %>
+      </article>
+ 
     </div>
 
     <script src="" async defer></script>
