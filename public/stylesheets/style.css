@@ -1,9 +1,9 @@
 :root {
-  --bg-primary: #100d17;
+  --bg-primary: #191919;
   --bg-hover: #50565f;
   --font-clr-primary: white;
-  --font-style: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  --gradient-clr: linear-gradient(to bottom right, #b664e6, #e5919c);
+  --font-style: sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  --gradient-clr: linear-gradient(to bottom right, #64cce6, #5537d8);
 }
 
 * {
@@ -82,3 +82,25 @@ article > a:hover {
   width: auto;
 }
 
+article > a > div > div {
+  width: 150px;
+}
+
+.character-details {
+  display: flex;
+  justify-content: center;
+}
+
+.descriptions > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.descriptions {
+  padding: 0 10px 0 10px; /*REMEMBER: top right bottom left*/
+}
+
+.descriptions * {
+  border: 1px solid white;
+  padding: 10px;
+}

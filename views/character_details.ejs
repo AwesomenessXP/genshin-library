@@ -5,50 +5,60 @@
     
     <div class="content">
       <img src="<%- `https://api.genshin.dev/characters/${title}/icon` %>">
-      <% for (const [key, value] of Object.entries(character_details)) { %>
-        <% if (key === 'name') { %>
-          <h2><%- value %></h2> 
-        <% } %>  
-        <% let detail = `${key}: ${value}` %> 
-        <% switch (key) { 
-          case 'skillTalents': { %> 
-            <p><%- key %>: </p>
-            <ul>
-              <% value.forEach(obj => { %> 
-                <li> <%- obj.unlock %> - <%- obj.name %> </li> 
-                <li> Description: <%- obj.description %> </li>
-                <br>
-              <% }) %> 
-            </ul>
-            <% break; } %>
-          <% case 'passiveTalents': { %> 
-            <p><%- key %>: </p>
-            <ul>
-              <% value.forEach(obj => { %>
-                <li><%- obj.unlock %></li> 
-                <li><%- obj.name %> </li>
-                <li> Description: <%- obj.description %> </li>
-                <br> 
-              <% }) %> 
-            </ul>
-            <% break; } %>
-          <% case 'constellations': { %> 
-          <p><%- key %>: </p>
-          <ul>
-            <% value.forEach(obj => { %> 
-              <li><%- obj.unlock %></li>
-              <li><%- obj.name %> </li> 
-              <li> Description: <%- obj.description %> </li>
-              <br> 
-            <% }) %> 
-          </ul>
-          <% break; } 
-          default: %> 
-            <p><%- detail %></p>
-          <% break; %> 
-        <% } %> 
-        <br>
-      <% } %> 
+
+      <div class="character-details">
+        <div class="gacha-card">
+          <img src="<%- `https://api.genshin.dev/characters/${title}/gacha-card` %>">
+        </div>
+        <div class="descriptions">
+          <% for (const [key, value] of Object.entries(character_details)) { %>
+            <% if (key === 'name') { %>
+              <h2><%- value %></h2> 
+            <% } %>  
+            <% let detail = `${key}: ${value}` %> 
+            <% switch (key) { 
+              case 'skillTalents': { %> 
+                <p><%- key %>: </p>
+                <ul>
+                  <% value.forEach(obj => { %> 
+                    <li> <%- obj.unlock %> - <%- obj.name %> </li> 
+                    <li> Description: <%- obj.description %> </li>
+                    <br>
+                  <% }) %> 
+                </ul>
+                <% break; } %>
+              <% case 'passiveTalents': { %> 
+                <p><%- key %>: </p>
+                <ul>
+                  <% value.forEach(obj => { %>
+                    <li><%- obj.unlock %></li> 
+                    <li><%- obj.name %> </li>
+                    <li> Description: <%- obj.description %> </li>
+                    <br> 
+                  <% }) %> 
+                </ul>
+                <% break; } %>
+              <% case 'constellations': { %> 
+              <p><%- key %>: </p>
+              <ul>
+                <% value.forEach(obj => { %> 
+                  <li><%- obj.unlock %></li>
+                  <li><%- obj.name %> </li> 
+                  <li> Description: <%- obj.description %> </li>
+                  <br> 
+                <% }) %> 
+              </ul>
+              <% break; } 
+              default: %> 
+                <p><%- detail %></p>
+              <% break; %> 
+            <% } %> 
+            <br>
+          <% } %> 
+        </div>
+      </div>
+
+
     </div>
 
     <script src="" async defer></script>
