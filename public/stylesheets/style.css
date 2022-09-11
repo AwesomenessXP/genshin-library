@@ -1,5 +1,5 @@
 :root {
-  --bg-primary: #0D1117;
+  --bg-primary: #100d17;
   --bg-hover: #50565f;
   --font-clr-primary: white;
   --font-style: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -59,7 +59,7 @@ article {
   gap: 10px;
 }
 
-article > div {
+article > a > div {
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -68,12 +68,17 @@ article > div {
   border-radius: 8px;
 }
 
-article > div:hover {
+article > a:hover {
   background-color: var(--bg-hover);
 }
 
 .item-list {
   font-size: 20px;
   text-decoration: none;
+}
+
+.character-img-1 {
+  height: 115px;
+  width: auto;
 }
 

@@ -19,17 +19,19 @@
             <% count++ %>  
           <% }) %>
           <% formattedChar = formattedChar.join(' ') %>
-          <div>
-
+          <a href="<%- `/genshin-library/characters/${character}` %>">
             <div>
-              <img src="<%- `https://api.genshin.dev/characters/${character}/icon` %>"> 
-            </div>
 
-            <div>
-              <a href="<%- `/genshin-library/characters/${character}` %>"><p class="item-list"><%- formattedChar %></p></a>
+              <div>
+                <img src="<%- `https://api.genshin.dev/characters/${character}/icon` %>" class="character-img-1"> 
+              </div>
+
+              <div>
+                <p class="item-list"><%- formattedChar %></p>
+              </div>
+
             </div>
-            
-          </div>
+          </a>
         <% }); %>
       </article>
  
