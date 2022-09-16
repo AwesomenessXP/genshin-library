@@ -6,23 +6,39 @@
     <div class="content">
       <h2><%- title %> </h2>
 
-      <% artifacts.forEach(artifact => { %> 
-        <% artifactArray = artifact.replace(/-/g, ' ') %> 
-        <% if (artifactArray.includes(" s ")) { %>
-          <% artifactArray = artifactArray.replace(" s ", "'s ") // format with apostrophe correctly %> 
-        <% } %>
-        <% let count = 0; %> 
-        <% let formattedArtifact = artifactArray.split(' ') // split along the spaces %>  
-        <% formattedArtifact.forEach(word => {%>  
-          <% wordArray = word.split('') %> 
-          <% let firstLetter = wordArray[0].toUpperCase() %> 
-          <% wordArray.shift() %>
-          <% formattedArtifact[count] = `${firstLetter}${wordArray.join('')}` %>
-          <% count++ %>  
-        <% }) %>
-        <% formattedArtifact = formattedArtifact.join(' ') %>  
-        <a href="<%- `/genshin-library/artifacts/${artifact}` %>"><p><%- formattedArtifact %>  </p></a>
-      <% }); %> 
+      <article>
+        <% artifacts.forEach(artifact => { %> 
+          <% artifactArray = artifact.replace(/-/g, ' ') %> 
+          <% if (artifactArray.includes(" s ")) { %>
+            <% artifactArray = artifactArray.replace(" s ", "'s ") // format with apostrophe correctly %> 
+          <% } %>
+          <% let count = 0; %> 
+          <% let formattedArtifact = artifactArray.split(' ') // split along the spaces %>  
+          <% formattedArtifact.forEach(word => {%>  
+            <% wordArray = word.split('') %> 
+            <% let firstLetter = wordArray[0].toUpperCase() %> 
+            <% wordArray.shift() %>
+            <% formattedArtifact[count] = `${firstLetter}${wordArray.join('')}` %>
+            <% count++ %>  
+          <% }) %>
+          <% formattedArtifact = formattedArtifact.join(' ') %>  
+          <a href="<%- `/genshin-library/artifacts/${artifact}` %>">
+            <div>
+
+              <div>
+                <img src="<%- `https://api.genshin.dev/artifacts/${artifact}/flower-of-life` %>" class="character-img-1"> 
+              </div>
+
+              <div>
+                <p><%- formattedArtifact %></p>
+              </div>
+
+            </div>
+            
+          </a>
+        <% }); %> 
+      </article>
+
 
     </div>
 
