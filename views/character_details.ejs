@@ -3,8 +3,7 @@
   <%- include('header') -%>  
   <body>
     
-    <div class="content">
-      <img src="<%- `https://api.genshin.dev/characters/${title}/icon` %>">
+    <div class="character-det-content">
 
       <div class="character-details">
         <div class="gacha-card">
@@ -18,17 +17,17 @@
             <% let detail = `${key}: ${value}` %> 
             <% switch (key) { 
               case 'skillTalents': { %> 
-                <p><%- key %>: </p>
+                <p class="talent">Skill Talents</p>
                 <ul>
-                  <% value.forEach(obj => { %> 
-                    <li> <%- obj.unlock %> - <%- obj.name %> </li> 
-                    <li> Description: <%- obj.description %> </li>
-                    <br>
+                  <% value.forEach(obj => { %>
+                      <li> <%- obj.unlock %> - <%- obj.name %> </li> 
+                      <li> Description: <%- obj.description %> </li>
+                      <br>
                   <% }) %> 
                 </ul>
                 <% break; } %>
               <% case 'passiveTalents': { %> 
-                <p><%- key %>: </p>
+                <p class="talent">Passive Talents</p>
                 <ul>
                   <% value.forEach(obj => { %>
                     <li><%- obj.unlock %></li> 
@@ -39,7 +38,7 @@
                 </ul>
                 <% break; } %>
               <% case 'constellations': { %> 
-              <p><%- key %>: </p>
+              <p class="talent">Constellations</p>
               <ul>
                 <% value.forEach(obj => { %> 
                   <li><%- obj.unlock %></li>
@@ -49,7 +48,11 @@
                 <% }) %> 
               </ul>
               <% break; } 
-              default: %> 
+                case 'vision_key': {  
+                  break; } 
+                case 'weapon_type': { 
+                  break; } 
+                default: %> 
                 <p><%- detail %></p>
               <% break; %> 
             <% } %> 

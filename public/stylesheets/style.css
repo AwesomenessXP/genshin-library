@@ -4,6 +4,7 @@
   --font-clr-primary: white;
   --font-style: sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   --gradient-clr: linear-gradient(to bottom right, #64cce6, #5537d8);
+  --radius: 12px;
 }
 
 * {
@@ -52,6 +53,12 @@ nav > h1 {
   margin: 20px;
 }
 
+.character-det-content {
+  margin: 20px;
+  height: 500px;
+  width: 100%;
+}
+
 article {
   margin-top: 30px;
   display: grid;
@@ -87,6 +94,8 @@ article > a > div > div {
 }
 
 .character-details {
+  height: 500px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -100,7 +109,30 @@ article > a > div > div {
   padding: 0 10px 0 10px; /*REMEMBER: top right bottom left*/
 }
 
+.descriptions > p {
+  border: 1px solid white;
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
 .descriptions * {
+  display: flex;
+  justify-content: center;
+}
+
+.descriptions > ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 700px;
+  margin-left: 115px;
+}
+
+.descriptions > ul > li {
   border: 1px solid white;
   padding: 10px;
+}
+
+.talent {
+  margin-bottom: 10px;
 }
