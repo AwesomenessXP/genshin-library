@@ -17,33 +17,40 @@
             <% let detail = `${key}: ${value}` %> 
             <% switch (key) { 
               case 'skillTalents': { %> 
-                <p class="talent">Skill Talents</p>
+                <p class="talent"><strong>Skill Talents</strong></p>
                 <ul>
                   <% value.forEach(obj => { %>
-                      <li> <%- obj.unlock %> - <%- obj.name %> </li> 
-                      <li> Description: <%- obj.description %> </li>
-                      <br>
+                    <li>
+                      <p class="talent-skil" style="color: #269450;"><strong><%- obj.unlock %> - <%- obj.name %></strong></p>
+                      <p><%- obj.description %></p>
+                    </li> 
+                    <br>
+
                   <% }) %> 
                 </ul>
                 <% break; } %>
               <% case 'passiveTalents': { %> 
-                <p class="talent">Passive Talents</p>
+                <p class="talent"><strong>Passive Talents</strong></p>
                 <ul>
                   <% value.forEach(obj => { %>
-                    <li><%- obj.unlock %></li> 
-                    <li><%- obj.name %> </li>
-                    <li> Description: <%- obj.description %> </li>
+                    <li>
+                      <p><%- obj.unlock %></p>
+                      <p><%- obj.name %></p>
+                      <p><%- obj.description %></p>
+                    </li> 
                     <br> 
                   <% }) %> 
                 </ul>
                 <% break; } %>
               <% case 'constellations': { %> 
-              <p class="talent">Constellations</p>
+              <p class="talent"><strong>Constellations</strong></p>
               <ul>
                 <% value.forEach(obj => { %> 
-                  <li><%- obj.unlock %></li>
-                  <li><%- obj.name %> </li> 
-                  <li> Description: <%- obj.description %> </li>
+                  <li>
+                    <p><%- obj.unlock %></p>
+                    <p><%- obj.name %></p>
+                    <p><%- obj.description %></p>
+                  </li>
                   <br> 
                 <% }) %> 
               </ul>
